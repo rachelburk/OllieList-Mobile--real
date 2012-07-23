@@ -1,3 +1,19 @@
+<html> 
+    <head> 
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <title>Volnteer hours</title> 
+    <link href="css/jquery.mobile-1.0rc1.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/fatima.css" rel="stylesheet" type="text/css" />
+    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="js/sendItem.js"></script>
+    <script src="js/jquery.mobile-1.0rc1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/mobiscroll-2.0.custom.min.css" />
+    <script type="text/javascript" src="js/mobiscroll-2.0.custom.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/cordova-1.9.0.js"></script>
+</head> 
+<body> 
+
+
 <div data-role="page" id="newpage">
 
 	<div data-role="header">
@@ -12,21 +28,21 @@
                 <label for="name">
                    Item name
                 </label>
-                <input type="text" id="itemname" placeholder=""/>
+                <input type="text" id="name" placeholder=""/>
             </fieldset>
             
              <fieldset data-role="controlgroup">
                 <label for="price">
                     Price
                 </label>
-                <input type="text" id="itemprice" placeholder=""/>
+                <input type="text" id="price" placeholder=""/>
             </fieldset>
             
             <fieldset data-role="controlgroup">
                 <label for="dscrp">
                     Description
                 </label>
-                <textarea id="itemdscrp" placeholder="">
+                <textarea id="dscrp" placeholder="">
                 </textarea>
             </fieldset>
 
@@ -39,10 +55,12 @@
             </fieldset>
         </div>
         <div data-role="controlgroup"> 
-	    	<a id="getDataLink" data-role="button">Post new Item! </a>  
+	    	<a id="getDataLink" data-role="button" onClick="sendItem()">Post new Item! </a>  
 	    </div> 
 
 		<div id="status"></div>
 		
 	</div>
 </div>
+</body>
+</html> 

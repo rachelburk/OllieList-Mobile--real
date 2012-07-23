@@ -60,28 +60,20 @@ $("#createtourpage").live("pagecreate", function(event) {
 
 $("#showpage").live("pagecreate", function(event) {
 	var page = $("#showpage");
-
-	$("#getitems").live("click", function(e){
-		$.post("0.0.0.0:3000/mobiledownload.json",
-			{"name": "hello"
-
-			})
-
-	});
-}
-
-$("#newpage").live("pagecreate", function(event) {
-	var page = $("#newpage");
-
-	$("#getDataLink").live("click",function(e) {
-		$.post("0.0.0.0:3000/mobileupload.json", 
-		        { "name":$("#itemname",page).val(),
-		         "price":$("#itemprice",page).val(), 
-		         "dscrp":$("#itemdscrp",page).val()}, 
-		         "email":$("#email",page).val()},
+	$.post("0.0.0.0:3000/mobiledownload.json",{"fatima":"fatima"},  
 		        function(res,code) {
-			         $("#status", page).html("Result from remote server was " + res[0].title);
+		       var data=JSON.stringify(res['items']);
+
+		        var items = [];
+     var x;
+       items.push('<tr><td> Item </td><td>price </td><td>Description </td></tr>');
+       for(i=0; i<data.length; i++) {
+  		
+       items.push('<tr><td>' + JSON.stringify(res['items'][i].name) +'</td><td>'+ JSON.stringify(res['items'][i].price)+ '</td><td>'+JSON.stringify(res['items'][i].dscrp) +'</td></tr>');
+  		}
+  		var htmlstring=items.join('');
+  		$('table#note',page).html(htmlstring);
+
 		});
 	});
-}
 
